@@ -1,0 +1,32 @@
+{{define "public/main-sidebar.html"}}
+<!-- Bootstrap 3.3.5 -->
+      <aside class="main-sidebar">
+
+        <!-- sidebar: style can be found in sidebar.less -->
+        <section class="sidebar">
+
+
+          <!-- Sidebar Menu -->
+          <ul class="sidebar-menu">
+            <li class="header">菜单</li>
+            <li class="treeview active">
+              <a href="{{pageurl "user/list"}}"><i class="fa fa-link"></i> <span>用户管理</span> <i class="fa fa-angle-left pull-right"></i></a>
+              <ul class="treeview-menu">
+                <li><a href="{{pageurl "user/list"}}">全部用户</a></li>
+              </ul>
+            </li>
+
+
+              <li class="treeview active">
+                  <a href="{{pageurl "setting/role"}}"><i class="fa fa-link"></i> <span>系统设置</span> <i class="fa fa-angle-left pull-right"></i></a>
+                  <ul class="treeview-menu">
+                      <li><a href="{{pageurl "setting/role"}}">角色权限</a></li>
+                      <li><a href="{{pageurl "setting/site"}}">网站设置</a></li>
+                  </ul>
+              </li>
+          </ul><!-- /.sidebar-menu -->
+        </section>
+        <!-- /.sidebar -->
+      </aside>
+
+{{end}}

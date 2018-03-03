@@ -1,0 +1,27 @@
+{{define "setting/editconfig.html"}}
+
+<div class="modal fade" tabindex="-1" id="mod-editconfig" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                    <h4 class="modal-title">请输入配置的值</h4>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1" id="config-label"></label>
+                        <textarea type="name" id="config-value" class="form-control">
+                                
+                        </textarea>
+                    </div>
+
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                <button type="button" id="btn-submit-config" class="btn btn-primary">确定</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+{{end}}

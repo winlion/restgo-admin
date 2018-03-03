@@ -1,0 +1,46 @@
+{{define "public/head.html"}}
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="Expires" content="0">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Cache-control" content="no-cache">
+<meta http-equiv="Cache" content="no-cache">
+<meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+<meta name="format-detection" content="telephone=no,email=no,date=no,address=no" />
+<script type="text/javascript" src="{{asset}}/js/jquery-2.1.4.min.js" ></script>
+<script type="text/javascript" src="{{asset}}/js/vue.min.js" ></script>
+<script src="{{asset}}/plugins/bootstrap/js/bootstrap.min.js"></script>
+
+<link rel="stylesheet" href="{{asset}}/plugins/bootstrap/css/bootstrap.min.css">
+<!-- Font Awesome -->
+<link rel="stylesheet" href="{{asset}}/plugins/font-awesome/css/font-awesome.min.css">
+<!-- Ionicons -->
+<link rel="stylesheet" href="{{asset}}/plugins/ionicons/css/ionicons.min.css">
+<!-- Theme style -->
+<link rel="stylesheet" href="{{asset}}/plugins/adminlte/css/AdminLTE.min.css">
+<!-- AdminLTE Skins. We have chosen the skin-blue for this starter
+      page. However, you can choose any other skin. Make sure you
+      apply the skin class to the body tag so the changes take effect.
+-->
+<link rel="stylesheet" href="{{asset}}/plugins/adminlte/css/skins/skin-blue.min.css">
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+    <script src="{{asset}}/js/html5shiv.min.js"></script>
+    <script src="{{asset}}/js/respond.min.js"></script>
+<![endif]-->
+
+<link rel="stylesheet" href="{{asset}}/plugins/bootstrap-table/bootstrap-table.min.css" />
+<link rel="stylesheet" href="{{asset}}/plugins/datetimepicker/css/bootstrap-datetimepicker.min.css" />
+<script>
+var SERVERURL="{{ctxpath}}";
+
+</script>
+<script type="text/javascript" src="{{asset}}/js/util.js?v={{version}}" ></script>
+        <style>
+            .bs-bars  .form-group {
+                margin-left:5px;
+            }
+        </style>
+{{end}}

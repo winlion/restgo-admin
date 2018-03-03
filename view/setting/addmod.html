@@ -1,0 +1,25 @@
+{{define "setting/addmod.html"}}
+<div class="modal fade" tabindex="-1" id="mod-mod" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                    <h4 class="modal-title">添加模块</h4>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">请输入模块名称</label>
+                        <input type="name" v-model="dmod.name" class="form-control"  placeholder="模块用来干啥的">
+                    </div>
+
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                <button type="button" @click="confirmmod" class="btn btn-primary">确定</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+{{end}}

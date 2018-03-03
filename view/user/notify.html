@@ -1,0 +1,165 @@
+{{define "user/notify.html"}}
+<!DOCTYPE html>
+<!--
+This is a starter template page. Use this page to start your new project from
+scratch. This page gets rid of all links and provides the needed markup only.
+-->
+<html>
+  <head>
+		{{template "public/head.html"}}
+  </head>
+  
+  <body class="hold-transition skin-blue sidebar-mini">
+    <div class="wrapper">
+
+		{{template "public/main-header.html"}}
+      <!-- Left side column. contains the logo and sidebar -->
+				
+		{{template "public/main-sidebar.html"}}
+      <!-- Content Wrapper. Contains page content -->
+      <div class="content-wrapper">
+        <!-- Content Header (Page header) -->
+        <section class="content-header">
+          <h1>
+            反馈管理
+            <small>在这里处理反馈信息</small>
+          </h1>
+          <ol class="breadcrumb">
+            <li><a href="javascript:void(0)"><i class="fa fa-dashboard"></i> 用户管理</a></li>
+            <li class="active">反馈管理</li>
+          </ol>
+        </section>
+
+        <!-- Main content -->
+        <section class="content">
+
+        
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="box">
+            
+				
+            <!-- /.box-header -->
+            <div class="box-body">
+			 <div id="toolbar">
+				<div class="form-group pull-left">
+                 
+                  <select class="form-control">
+                    <option>option 1</option>
+                    <option>option 2</option>
+                    <option>option 3</option>
+                    <option>option 4</option>
+                    <option>option 5</option>
+                  </select>
+                </div>
+				
+				
+				
+				<div class="form-group  pull-left">
+                 <input type="text" name="table_search" class="form-control picker" placeholder="从哪时开始">
+	
+                </div>
+				<div class="form-group  pull-left">
+                 <input type="text" name="table_search" class="form-control picker" placeholder="到这时截止">
+	
+                </div>
+				<div class="form-group  pull-left" >
+	                  <input type="text" name="table_search" class="form-control" placeholder="姓名/关键字">
+	
+	                 
+	            </div>
+				
+                 <div class="btn-group  pull-left" role="group" >
+				  <button type="button" class="btn btn-success">搜索</button>
+				  <button type="button" class="btn btn-default">打印</button>
+				  <button type="button" class="btn btn-default">导出</button>
+				</div>
+			</div>
+              <table id="example" class="table table-bordered table-hover">
+               
+                
+              </table>
+			   
+			</div>  
+            </div>
+            <!-- /.box-body -->
+          </div>
+          <!-- /.box -->
+
+        </div>
+        <!-- /.col -->
+      </div>
+      <!-- /.row -->
+        </section><!-- /.content -->
+      </div><!-- /.content-wrapper -->
+		
+     	{{template "public/footer.html"}}
+    </div><!-- ./wrapper -->
+
+    <!-- REQUIRED JS SCRIPTS -->
+		{{template "public/foot.html"}}
+  </body>
+</html>
+<link rel="stylesheet" href="/assets/plugins/bootstrap-table/bootstrap-table.min.css" />
+<link rel="stylesheet" href="/assets/plugins/datetimepicker/css/bootstrap-datetimepicker.min.css" />
+<script src="/assets/plugins/bootstrap-table/bootstrap-table.min.js"></script>
+<script src="/assets/plugins/bootstrap-table/locale/bootstrap-table-zh-CN.js"></script>
+<script src="/assets/plugins/datetimepicker/js/bootstrap-datetimepicker.min.js"></script>
+<script src="/assets/plugins/datetimepicker/js/locales/bootstrap-datetimepicker.zh-CN.js"></script>
+<script>
+function buildArgs(){
+	return {};
+}
+
+$(".picker").datetimepicker({
+        format: 'yyyy-mm-dd hh:ii:ss',
+		autoclose:true,
+		 startView:2,
+		language:"zh-CN",
+		todayBtn:true,
+		todayHighlight:true
+ });
+ $('#example').bootstrapTable({  
+    columns: [{  
+        field: 'id',  
+        title: 'Item ID'  
+    }, {  
+        field: 'name',  
+        title: 'Item Name'  
+    }, {  
+        field: 'price',  
+        title: 'Item Price'  
+    }],  
+    data: [{  
+        id: 1,  
+        name: 'Item 1',  
+        price: '$1'  
+    }, {  
+        id: 2,  
+        name: 'Item 2',  
+        price: '$2'  
+    }],
+	showFooter:false,
+	pageNumber:1,
+	pageSize:20,
+	pageList:[10, 25, 50, 100, 200],
+	pagination: true,                   //是否显示分页（*）
+	sortName:"id",
+	showColumns:true,
+	showToggle:true,
+	showPaginationSwitch:true,
+	minimumCountColumns:10,
+	queryParams: buildArgs,//传递参数（*）
+    sidePagination: "server",           //分页方式：client客户端分页，server服务端分页（*）
+	cardView:false,
+	detailView:false,
+	singleSelect:true,
+	sortable:true,
+	silentSort:true,
+	toolbar:"#toolbar"
+}); 
+
+
+</script>
+
+{{end}}

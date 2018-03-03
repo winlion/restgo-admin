@@ -1,0 +1,47 @@
+{{define "setting/addres.html"}}
+<div class="modal fade" tabindex="-1" id="mod-res" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">添加权限</h4>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <label >请选择权限类型</label>
+                    <div class="radio">
+                        <label>
+                            <input type="radio" v-model="dres.restype" name="type" id="optionsRadios1" value="page" checked>
+                            页面
+                        </label>
+                        <label>
+                            <input type="radio" v-model="dres.restype" name="type" id="optionsRadios2" value="api">
+                            api
+                        </label>
+                    </div>
+                    <div class="form-group">
+                        <label >请选择所属模块</label>
+                        <select v-model="dres.pid" class="form-control">
+                            <option v-for="item in allauth" v-if="item.pid==0" :value="item.id" v-text="item.name"></option>
+                        </select>
+                        
+                    </div>
+                    <div class="form-group">
+                    <label>请输入权限名称</label>
+                    <input type="" v-model="dres.name" class="form-control" id="name" placeholder="模块用来干啥的">
+                </div>
+
+                    <div class="form-group">
+                        <label >请输入权限格式</label>
+                        <input type="" v-model="dres.patern" class="form-control" id="patern" placeholder="模块用来干啥的">
+                    </div>
+
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                <button type="button" @click="confirmres" data-dismiss="modal" class="btn btn-primary">确定</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+{{end}}

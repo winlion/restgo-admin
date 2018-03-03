@@ -1,0 +1,27 @@
+{{define "setting/addrole.html"}}
+<link rel="stylesheet" href="{{asset}}/plugins/ztree-v3/css/zTreeStyle/zTreeStyle.css" />
+<script src="{{asset}}/plugins/ztree-v3/js/jquery.ztree.all.js"></script>
+
+<div class="modal fade" tabindex="-1" id="mod-role" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                    <h4 class="modal-title">添加角色</h4>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">请输入角色名称</label>
+                        <input type="name" v-model="drole.name" class="form-control" id="rolename" placeholder="角色用来干啥的">
+                    </div>
+
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                <button type="button"   @click="confirmrole" class="btn btn-primary">确定</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+{{end}}

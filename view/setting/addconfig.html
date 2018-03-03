@@ -1,0 +1,44 @@
+{{define "setting/addconfig.html"}}
+<div class="modal fade" tabindex="-1" id="mod-config" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">添加参数配置</h4>
+            </div>
+            <div class="modal-body">
+                <form>
+
+                   
+
+                    <div class="form-group">
+                    <label for="exampleInputEmail1">请输入参数名称(英文)</label>
+                    <input type="" v-model="dres.name" class="form-control"  placeholder="模块英文名称">
+                </div>
+
+
+                <div class="form-group">
+                    <label for="exampleInputEmail1">描述一下这个参数参数</label>
+                    <input type="" v-model="dres.label" class="form-control"  placeholder="参数是干嘛的,长啥样">
+                </div>
+
+
+                <div class="form-group">
+                    <label for="exampleInputEmail1">设置一个初始化值</label>
+                    <input type="" v-model="dres.value" class="form-control"  placeholder="参数默认啥样">
+                </div>
+
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">请输入校验格式</label>
+                        <input type="" v-model="dres.format" class="form-control" placeholder="正则或不填,聪明的程序员会填写">
+                    </div>
+
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                <button type="button" id="submitconfig" class="btn btn-primary">确定</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+{{end}}

@@ -1,0 +1,39 @@
+{{define "user/xieyi.html"}}
+<!DOCTYPE html>
+<!--
+This is a starter template page. Use this page to start your new project from
+scratch. This page gets rid of all links and provides the needed markup only.
+-->
+<html>
+  <head>
+		{{template "public/head.html"}}
+<style>
+    .bg {
+    width: 100%;
+    height: 100%;
+    background: url("{{asset}}/assets/images/bg.jpg") no-repeat center center;
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+	}
+    .login-box{
+        width: 960px;
+    }
+</style>
+  </head>
+ <body class="hold-transition login-page bg">
+    <div class="login-box">
+      <div class="login-logo">
+        <a ><b>xx协议</b></a>
+      </div><!-- /.login-logo -->
+      <div class="login-box-body">
+
+        这里是协议内容
+
+      </div><!-- /.login-box-body -->
+    </div><!-- /.login-box -->
+
+
+  </body>
+</html>
+{{end}}
