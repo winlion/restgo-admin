@@ -1,8 +1,8 @@
 #1、首先上效果
-![登录页面](/blob/master/asset/images/1.png)
-![登入首页](/blob/master/asset/images/2.png)
-![自由配置角色和权限](/blob/master/asset/images/3.png)
-![支持系统自定义参数](/blob/master/asset/images/4.png)
+![登录页面](https://github.com/winlion/restgo-admin/blob/master/asset/images/1.png)
+![登入首页](https://github.com/winlion/restgo-admin/blob/master/asset/images/2.png)
+![自由配置角色和权限](https://github.com/winlion/restgo-admin/blob/master/asset/images/3.png)
+![支持系统自定义参数](https://github.com/winlion/restgo-admin/blob/master/asset/images/4.png)
 #2、如何使用
 ##2.1、使用如下指令克隆
 <code>
