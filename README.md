@@ -11,7 +11,8 @@ git clone https://github.com/winlion/restgo-admin.git
 //你将得到restgo-admin 目录  
 //进入目录  
 cd restgo-admin  
-</code>
+</code>  
+
 ## 2.2、数据库
 兴建数据库名称为restgo-admin,编码为utf-8  
 将restgo-admin.sql导入到数据库中  
