@@ -3,6 +3,7 @@
 ![登入首页](https://github.com/winlion/restgo-admin/blob/master/asset/images/2.png)
 ![自由配置角色和权限](https://github.com/winlion/restgo-admin/blob/master/asset/images/3.png)
 ![支持系统自定义参数](https://github.com/winlion/restgo-admin/blob/master/asset/images/4.png)
+  
 #2、如何使用
 ##2.1、使用如下指令克隆
 <code>
@@ -12,9 +13,11 @@ git clone https://github.com/winlion/restgo-admin.git
 //进入目录
 cd restgo-admin
 </code>
+
 ##2.2、数据库
 兴建数据库名称为restgo-admin,编码为utf-8
 将restgo-admin.sql导入到数据库中
+
 ##2.3、初始化依赖包
 使用前先使用如下指令安装指令安装文件
 go get github.com/go-sql-driver/mysql
@@ -33,6 +36,7 @@ go run main.go
 <code>
 build.bat
 </code>
+
 #3、FAQ
 ##3.1 如何安装开发环境
 如果你使用的是vscode,安装问题请访问
