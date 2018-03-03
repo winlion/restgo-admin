@@ -6,12 +6,16 @@
 # 2、如何使用
 ## 2.1、使用如下指令克隆
 <code>
-cd $GOPATH/src  
-git clone https://github.com/winlion/restgo-admin.git  
-//你将得到restgo-admin 目录  
-//进入目录  
-cd restgo-admin  
+cd $GOPATH/src
 </code>  
+<code>   
+git clone https://github.com/winlion/restgo-admin.git  
+</code>  
+你将得到restgo-admin 目录  
+进入目录  
+<code>
+cd restgo-admin  
+</code>    
 
 ## 2.2、数据库
 新建数据库名称为restgo-admin,编码为utf-8  
