@@ -6,7 +6,7 @@ import (
 	_ "github.com/go-sql-driver/mysql"
 
 	"html/template"
-	"strings"
+	
 )
 
 var restFuncMap template.FuncMap = make(template.FuncMap)
