@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 rm -rf ./release
 mkdir  release
 go build -o restgo-admin

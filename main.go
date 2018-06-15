@@ -13,9 +13,9 @@ import (
 
 	"strconv"
 
-	"restgo-admin/controller"
-	"restgo-admin/entity"
-	"restgo-admin/restgo"
+	"./controller"
+	"./entity"
+	"./restgo"
 )
 
 func registerRouter(router *gin.Engine) {
