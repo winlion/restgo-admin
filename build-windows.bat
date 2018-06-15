@@ -8,3 +8,4 @@ XCOPY mnt\*.* release\mnt\  /s /e
 XCOPY asset\*.* release\asset\  /s /e 
 XCOPY view\*.* release\view\  /s /e 
 echo "打包成功,相关应用在release目录下"
+@pause
