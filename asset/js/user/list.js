@@ -50,6 +50,12 @@ $("#table").on("click",".updatestat",function(){
         field: 'account',
         title: '账号'
     }, {
+         field: 'email',
+         title: '邮箱'
+     },{
+         field: 'mobile',
+         title: '手机号'
+     },{
          field: 'nickname',
          title: '昵称'
      }, {

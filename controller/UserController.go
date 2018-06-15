@@ -2,13 +2,13 @@ package controller
 
 import (
 	"net/http"
-	"restgo-admin/model"
-	"restgo-admin/restgo"
+	"../model"
+	"../restgo"
 
 	"github.com/gin-gonic/gin"
 
-	"restgo-admin/entity"
-	"restgo-admin/service"
+	"../entity"
+	"../service"
 	"strconv"
 
 	"github.com/gin-gonic/gin/binding"

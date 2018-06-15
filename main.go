@@ -79,6 +79,11 @@ func main() {
 	router.Use(restgo.Auth())
 	registerRouter(router)
 
-	fmt.Println("[ok] app run", cfg.App["addr"]+":"+cfg.App["port"])
-	http.ListenAndServe(cfg.App["addr"]+":"+cfg.App["port"], router)
+
+	err := http.ListenAndServe(cfg.App["addr"]+":"+cfg.App["port"], router)
+	if err!=nil{
+		fmt.Println(err.Error())
+	}else{
+		fmt.Println("[ok] app run", cfg.App["addr"]+":"+cfg.App["port"])
+	}
 }

@@ -1,9 +1,9 @@
 package service
 
 import (
-	"restgo-admin/entity"
-	"restgo-admin/restgo"
-	"restgo-admin/model"
+	"../entity"
+	"../restgo"
+	"../model"
 	"github.com/gin-gonic/gin"
 	"errors"
 	"time"

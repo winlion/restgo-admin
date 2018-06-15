@@ -6,6 +6,7 @@ import (
 	_ "github.com/go-sql-driver/mysql"
 
 	"html/template"
+	"strings"
 )
 
 var restFuncMap template.FuncMap = make(template.FuncMap)
@@ -21,7 +22,10 @@ func init(){
 
 func asset() string{
 	cfg := GetCfg()
-	return cfg.App["protocal"]+"://" + cfg.App["asset"]
+
+	return  cfg.App["asset"]
+
+
 }
 
 func GetFuncMap()(template.FuncMap){
@@ -36,12 +40,20 @@ func hello(d string) string{
 
 func ctxpath() string{
 	cfg := GetCfg()
-	return cfg.App["protocal"]+"://" + cfg.App["domain"]
+	url := cfg.App["protocal"]+"://" + cfg.App["domain"]
+	if (cfg.App["port"]!="80"){
+		url += (":"+cfg.App["port"])
+	}
+	return url
 }
 
 func pageurl(uri string) string{
 	cfg := GetCfg()
-	return cfg.App["protocal"]+"://" + cfg.App["domain"]+"/"+uri +".shtml"
+	url := cfg.App["protocal"]+"://" + cfg.App["domain"]
+	if (cfg.App["port"]!="80"){
+		url += (":"+cfg.App["port"])
+	}
+	return url+"/"+uri +".shtml"
 }
 
 func apiurl(uri string) string{

@@ -1,12 +1,12 @@
 package controller
 
 import (
-	"restgo-admin/restgo"
+	"../restgo"
 
 	"github.com/gin-gonic/gin"
 
-	"restgo-admin/entity"
-	"restgo-admin/service"
+	"../entity"
+	"../service"
 	"strconv"
 
 	"github.com/gin-gonic/gin/binding"
