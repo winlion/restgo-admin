@@ -18,8 +18,17 @@ go run  main.go
 
 ## 2.2、数据库
 新建数据库名称为restgo-admin,编码为utf-8  
-将restgo-admin.sql导入到数据库中
+将restgo-admin.sql导入到数据库中   
+修改conf/app.properties文件24行数据库配置
+restgo.datasource.default.dataSourceName=root:root@/restgo-admin?charset=utf8  
+数据库配置方式有如下几种,详细请自行百度  
 
+```
+user@unix(/path/to/socket)/dbname?charset=utf8
+user:password@tcp(localhost:5555)/dbname?charset=utf8
+user:password@/dbname
+user:password@tcp([de:ad:be:ef::ca:fe]:80)/dbname
+```
 ## 2.3、初始化依赖包
 使用前先使用如下指令安装指令安装文件
 ```
