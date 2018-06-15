@@ -12,7 +12,7 @@ import (
 	"github.com/tommy351/gin-sessions"
 
 	"strconv"
-
+	"os"
 	"./controller"
 	"./entity"
 	"./restgo"
@@ -45,16 +45,32 @@ func main() {
 			fmt.Println("data source init error", err.Error())
 			return
 		}
+		fmt.Println("initt data source %s", ds["dataSourceName"])
 		e.ShowSQL(ds["showSql"] == "true")
 		n, _ := strconv.Atoi(ds["maxIdle"])
 		e.SetMaxIdleConns(n)
 		n, _ = strconv.Atoi(ds["maxOpen"])
 		e.SetMaxOpenConns(n)
-		err = e.Sync2(new(entity.User), new(entity.Config), new(entity.RefRoleRes), new(entity.Resource), new(entity.Role))
-		if err != nil {
-			fmt.Println("data source init error", err.Error())
-			return
+		//判断init文件是否存在
+		_, err = os.Stat("inited")
+		//如果不存在
+		
+		if !(err == nil || !os.IsNotExist(err)){ 
+				fmt.Println("init table and passwd")
+				//创建表
+				err = e.Sync2(new(entity.User), new(entity.Config), new(entity.RefRoleRes), new(entity.Resource), new(entity.Role))
+				if err != nil {
+					fmt.Println("data source init error", err.Error())
+					return
+				}
+				//初始化sql语句
+				initsql := "INSERT INTO `user` VALUES ('1', 'admin@qq.com', '18600000000', 'd060812a3a1af12643a74a4d3b6d492d', 'admin@qq.com', '', '2018-02-23 11:32:32', 'winlion', '', '1', '0')";
+				e.Query(initsql)
+				//创建一个文件
+				os.Create("inited")
+				
 		}
+		
 		restgo.SetEngin(k, e)
 	}
 	fmt.Println("[ok] init datasource")
