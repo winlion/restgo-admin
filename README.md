@@ -37,12 +37,19 @@ go get github.com/tommy351/gin-sessions
 go run main.go  
 ```
 浏览器使用http://localhost/即可访问
-初始用户admin,密码rootme@1  
+初始用户admin,密码rootme@1
 使用账号18600000000或admin@qq.com,密码rootme@1也可以
-登录使用前先使用如下指令打包应用
+## 2.5、打包
+window下使用如下指令打包应用
 ```
 build.bat  
 ```
+linux下使用如下指令
+```
+#chmod +x ./build
+#./build
+```
+## 2.6、参数配置
 相关参数配置请移步
 [我的csdn博客https://blog.csdn.net/keytounix](https://blog.csdn.net/keytounix "csdn")
 ```
