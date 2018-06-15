@@ -59,6 +59,8 @@ linux/unix下使用如下指令
 #chmod +x ./build-unix
 #./build-unix
 ```
+打包前请认真阅读资源配置章节
+[资源控制器https://blog.csdn.net/keytounix/article/details/79336554](https://blog.csdn.net/keytounix/article/details/79336554 "资源控制器")
 ## 2.6、参数配置
 相关参数配置请移步
 [我的csdn博客https://blog.csdn.net/keytounix](https://blog.csdn.net/keytounix "csdn")
