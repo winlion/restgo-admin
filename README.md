@@ -19,7 +19,7 @@ go run  main.go
 ## 2.2、数据库
 新建数据库名称为restgo-admin,编码为utf-8  
 将restgo-admin.sql导入到数据库中   
-修改conf/app.properties文件24行数据库配置
+修改conf/app.properties文件24行数据库配置   
 restgo.datasource.default.dataSourceName=root:root@/restgo-admin?charset=utf8  
 数据库配置方式有如下几种,详细请自行百度  
 
@@ -59,8 +59,8 @@ linux/unix下使用如下指令
 #chmod +x ./build-unix
 #./build-unix
 ```
-打包前请认真阅读资源配置章节
-[资源控制器https://blog.csdn.net/keytounix/article/details/79336554](https://blog.csdn.net/keytounix/article/details/79336554 "资源控制器")
+打包前请认真阅读配置文件说明  
+[配置文件说明https://blog.csdn.net/keytounix/article/details/79336528](https://blog.csdn.net/keytounix/article/details/79336528 "配置文件说明")
 ## 2.6、参数配置
 相关参数配置请移步
 [我的csdn博客https://blog.csdn.net/keytounix](https://blog.csdn.net/keytounix "csdn")
