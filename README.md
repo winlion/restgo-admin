@@ -52,12 +52,12 @@ go run main.go
 ## 2.5、打包
 window下使用如下指令打包应用
 ```
-build.bat  
+build-windows.bat  
 ```
-linux下使用如下指令
+linux/unix下使用如下指令
 ```
-#chmod +x ./build
-#./build
+#chmod +x ./build-unix
+#./build-unix
 ```
 ## 2.6、参数配置
 相关参数配置请移步

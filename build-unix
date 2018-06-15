@@ -1,0 +1,11 @@
+#!/bin/bash
+rm -rf ./release
+mkdir  release
+go build -o restgo-admin
+cp restgo-admin ./release/
+cp favicon.ico ./release/
+cp -arf ./config ./release/
+cp -arf ./mnt ./release/
+cp -arf ./asset ./release/
+cp -arf ./view ./release/
+echo "build in release success!"
