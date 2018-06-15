@@ -36,9 +36,11 @@ go get github.com/tommy351/gin-sessions
 ```
 go run main.go  
 ```
-浏览器使用http://localhost/即可访问  
+```
+浏览器使用http://localhost/即可访问
 初始用户admin,密码rootme@1
 使用账号18600000000或admin@qq.com,密码rootme@1也可以登录
+```
 使用前先使用如下指令打包应用
 ```
 build.bat  
