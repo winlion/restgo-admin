@@ -69,15 +69,15 @@ func (service *UserService)Login(ctx *gin.Context,kword string,passwd string)(u 
 	isemail := restgo.IsEmail(kword)
 	var user entity.User
 	orm := restgo.OrmEngin()
-	t := orm.Where("id>0")
+
 	if ismobile{
-		t.Where("mobile=?",kword)
+		orm.Where("mobile = ?",kword).Get(&user)
 	}else if(isemail){
-		t.Where("email=?",kword)
+		orm.Where("email = ?",kword).Get(&user)
 	}else{
-		t.Where("account=?",kword)
+		orm.Where("account = ?",kword).Get(&user)
 	}
-	t.Get(&user)
+
 	if user.ID==0{
 		err = errors.New("该用户不存在")
 		return
