@@ -7,6 +7,7 @@ import (
 	"github.com/gin-gonic/gin"
 	"errors"
 	"time"
+	"github.com/go-xorm/xorm"
 )
 
 type UserService struct {}
@@ -20,19 +21,14 @@ func (service *UserService)FindOne(userId int64)(entity.User){
 
 func (service *UserService)Query(arg model.UserArg)([]entity.User){
 	var users []entity.User = make([]entity.User , 0)
-	orm := restgo.OrmEngin()
-	t := orm.Where("id>0")
-	if (0<len(arg.Kword)){
-		t = t.Where("name like ?","%"+arg.Kword+"%")
+	t:=service.BuildCond(arg)
+	if len(arg.Asc)>0{
+		t =t.Asc(arg.Asc)
 	}
-
-	if (!arg.Datefrom.IsZero()){
-		t = t.Where("create_at >= ?",arg.Datefrom)
+	if len(arg.Desc)>0{
+		t =t.Desc(arg.Desc)
 	}
-	if (!arg.Dateto.IsZero()){
-		t = t.Where("create_at <= ?",arg.Dateto)
-	}
-	t.Limit(arg.GetPageFrom()).Find(&users)
+	t.Limit(arg.GetPageSize(),arg.GetPageFrom()*arg.GetPageSize()).Find(&users)
 	return  users
 }
 
@@ -47,20 +43,26 @@ func (service *UserService)UpdateStat(id int64,stat int)(int64,error){
 
 func (service *UserService)Count(arg model.UserArg)(n int64){
 	var user entity.User
+	t:=service.BuildCond(arg)
+	n,_=t.Count(&user)
+	return
+}
+
+func (service *UserService)BuildCond(arg model.UserArg)(* xorm.Session){
+
 	orm := restgo.OrmEngin()
 	t := orm.Where("id>0")
 	if (0<len(arg.Kword)){
-		t = t.Where("name like ?","%"+arg.Kword+"%")
+		t = t.And("name like ?","%"+arg.Kword+"%")
 	}
 
 	if (!arg.Datefrom.IsZero()){
-		t = t.Where("create_at >= ?",arg.Datefrom)
+		 t = t.And("create_at >= ?",arg.Datefrom)
 	}
 	if (!arg.Dateto.IsZero()){
-		t = t.Where("create_at <= ?",arg.Dateto)
+		 t = t.And("create_at <= ?",arg.Dateto)
 	}
-	n,_=t.Count(&user)
-	return
+	return t
 }
 
 //登录服务,通过手机号/邮箱/用户名登录
@@ -71,13 +73,15 @@ func (service *UserService)Login(ctx *gin.Context,kword string,passwd string)(u 
 	orm := restgo.OrmEngin()
 
 	if ismobile{
-		orm.Where("mobile = ?",kword).Get(&user)
+		_,err=orm.Where("mobile = ?",kword).Get(&user)
 	}else if(isemail){
-		orm.Where("email = ?",kword).Get(&user)
+		_,err=orm.Where("email = ?",kword).Get(&user)
 	}else{
-		orm.Where("account = ?",kword).Get(&user)
+		_,err=orm.Where("account = ?",kword).Get(&user)
 	}
-
+	if err!=nil {
+		return
+	}
 	if user.ID==0{
 		err = errors.New("该用户不存在")
 		return

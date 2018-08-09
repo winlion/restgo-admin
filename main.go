@@ -65,7 +65,11 @@ func main() {
 				}
 				//初始化sql语句
 				initsql := "INSERT INTO `user` VALUES (1,'admin','18600000000','d060812a3a1af12643a74a4d3b6d492d','admin@qq.com','0000-00-00 00:00:00','2018-02-23 11:32:32','winlion',0,'admin@qq.com',0)";
-				e.Query(initsql)
+				_,err := e.Query(initsql)
+				if err!=nil{
+					fmt.Println("data source init error", err.Error())
+					return
+				}
 				//创建一个文件
 				os.Create("inited")
 				

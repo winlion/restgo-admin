@@ -3,8 +3,13 @@ var UserList={
 		
 }
 	
-function buildArgs(){
+function buildArgs(o){
+    console.log(o)
     var data={}
+    data.pagefrom=o.pageNumber
+    data.pagesize=o.pageSize
+    data.desc = "id"
+
     if(!!$("#ttype").val()){
         data.ttype =$("#ttype").val()
     }
