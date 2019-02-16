@@ -45,7 +45,7 @@ func main() {
 			fmt.Println("data source init error", err.Error())
 			return
 		}
-		fmt.Println("initt data source %s", ds["dataSourceName"])
+		fmt.Println("init data source %s", ds["dataSourceName"])
 		e.ShowSQL(ds["showSql"] == "true")
 		n, _ := strconv.Atoi(ds["maxIdle"])
 		e.SetMaxIdleConns(n)
