@@ -1,7 +1,7 @@
 package controller
 
 import (
-	"../restgo"
+	"restgo-admin/restgo"
 	"github.com/gin-gonic/gin"
 
 )

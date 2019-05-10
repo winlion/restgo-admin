@@ -2,8 +2,8 @@ package service
 
 import (
 	"errors"
-	"../entity"
-	"../restgo"
+	"restgo-admin/entity"
+	"restgo-admin/restgo"
 )
 
 type RoleService struct{}
