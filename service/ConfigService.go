@@ -1,9 +1,9 @@
 package service
 
 import (
-	"../entity"
-	"../model"
-	"../restgo"
+	"restgo-admin/entity"
+	"restgo-admin/model"
+	"restgo-admin/restgo"
 )
 
 type ConfigService struct{}

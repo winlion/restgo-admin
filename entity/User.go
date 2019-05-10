@@ -2,7 +2,7 @@ package entity
 
 import (
 
-	"../restgo"
+	"restgo-admin/restgo"
 
 )
 

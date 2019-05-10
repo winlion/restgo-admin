@@ -11,11 +11,11 @@ import (
 
 	"github.com/tommy351/gin-sessions"
 
-	"strconv"
 	"os"
-	"./controller"
-	"./entity"
-	"./restgo"
+	"restgo-admin/controller"
+	"restgo-admin/entity"
+	"restgo-admin/restgo"
+	"strconv"
 )
 
 func registerRouter(router *gin.Engine) {
